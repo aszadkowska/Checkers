@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1021bdd5-7018-4811-9321-6632f47887fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Client$1.class" afterPath="$PROJECT_DIR$/target/classes/Client$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Client$2.class" afterPath="$PROJECT_DIR$/target/classes/Client$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Client$3.class" afterPath="$PROJECT_DIR$/target/classes/Client$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Client.class" afterPath="$PROJECT_DIR$/target/classes/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Gui$Board.class" afterPath="$PROJECT_DIR$/target/classes/Gui$Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Client.java" afterPath="$PROJECT_DIR$/src/main/java/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Gui.java" afterPath="$PROJECT_DIR$/src/main/java/Gui.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,8 +29,8 @@
       <file leaf-file-name="Gui.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+            <state relative-caret-position="140">
+              <caret line="89" column="45" lean-forward="true" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,8 +84,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Gui.java" />
         <option value="$PROJECT_DIR$/src/main/java/Client.java" />
+        <option value="/usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/javax/swing/JPanel.class" />
+        <option value="$PROJECT_DIR$/src/main/java/Gui.java" />
       </list>
     </option>
   </component>
@@ -615,12 +609,12 @@
       <workItem from="1494500931763" duration="1404000" />
       <workItem from="1495646009649" duration="10412000" />
       <workItem from="1495699705253" duration="2019000" />
-      <workItem from="1495702463076" duration="4885000" />
+      <workItem from="1495702463076" duration="5509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21272000" />
+    <option name="totallyTimeSpent" value="21896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="73" y="24" width="1293" height="744" extended-state="0" />
@@ -636,7 +630,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.19412382" sideWeight="0.52436197" order="7" side_tool="true" content_ui="tabs" x="2172" y="459" width="671" height="185" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39937598" sideWeight="0.47563806" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39937598" sideWeight="0.47563806" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -853,6 +847,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/javax/swing/JPanel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -871,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+        <state relative-caret-position="140">
+          <caret line="89" column="45" lean-forward="true" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

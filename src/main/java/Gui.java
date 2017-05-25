@@ -79,14 +79,13 @@ public class Gui
 
             //String content = "Ada ada adaa\n";
             //backBoard.add(new JTextArea(content));
-
-
         }
 
         public void repaint(int numRows, int numCols, String[] splited) {
             String type;
             int[][] tab = new int[8][8];
             int i = 0;
+            backBoard.removeAll();
             for(int r=0; r<numRows; r++){
                 for(int c=0; c<numCols; c++){
                     type = type_BLANK;
