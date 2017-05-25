@@ -12,7 +12,7 @@ public class Client {
 
         final Gui.Board game = new Gui.Board();
 
-        final Socket socket = IO.socket("http://192.168.0.17:3000");
+        final Socket socket = IO.socket("http://192.168.43.138:3000");
         socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
 
             public void call(Object... args) {
@@ -26,12 +26,13 @@ public class Client {
                 String data = (String) args[0];
                 System.out.println(data);
                 game.repaint(8,8,data.split(","));
+
             }
         }).on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
 
             public void call(Object... args) {
-                String data = (String) args[0];
-                System.out.println(data);
+                /*String data = (String) args[0];
+                System.out.println(data);*/
             }
         });
         socket.connect();

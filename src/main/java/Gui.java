@@ -39,6 +39,7 @@ public class Gui
             frame.setVisible(true);
             backBoard.setVisible(true);
             String str;
+            //to copy: str=2,2,1,1,1,1,1,2,2,1,2,1,2,1,2,1,1,2,2,2,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,2,0,0,0,0,2,0,2,0,0,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,1,1
             str =   "1,0,1,0,1,0,1,0," +
                     "0,1,0,1,0,1,0,1," +
                     "1,0,0,0,1,0,1,0," +
@@ -73,11 +74,11 @@ public class Gui
 //
 //                }
 //            }
-            frame.add(backBoard);
+            //frame.add(backBoard);
             repaint(numRows, numCols, splited);
 
-            String content = "Ada ada adaa\n";
-            backBoard.add(new JTextArea(content));
+            //String content = "Ada ada adaa\n";
+            //backBoard.add(new JTextArea(content));
 
 
         }
@@ -104,11 +105,14 @@ public class Gui
 
 
            /* backBoard.repaint();
-            *//*frame.add(backBoard);*//*
-            frame.repaint();
+            frame.add(backBoard);
+            frame.repaint();*/
 
-*/
             SwingUtilities.updateComponentTreeUI(frame);
+            frame.invalidate();
+            frame.validate();
+            frame.repaint();
+            frame.add(backBoard);
         }
 
         private class BoardSquare extends JComponent
@@ -121,7 +125,7 @@ public class Gui
             private int y; //y position of the rectangle measured from top left corner
 
             private boolean isBlack = false;
-            private boolean isRed = false;
+            private boolean isWhite = false;
 
             public BoardSquare(int p, int q, String type)
             {
@@ -134,17 +138,17 @@ public class Gui
                 if (type.equals(type_BLACK))
                 {
                     isBlack = true;
-                    isRed = false;
+                    isWhite = false;
                 }
                 else if (type.equals(type_WHITE))
                 {
-                    isRed = true;
+                    isWhite = true;
                     isBlack = false;
                 }
                 else if (type.equals(type_BLANK))
                 {
                     isBlack = false;
-                    isRed = false;
+                    isWhite = false;
 
                 }
 
@@ -181,7 +185,7 @@ public class Gui
                     g3.drawOval(x + (width - 25) / 4, y + (width - 25) / 4, ovalWidth, ovalHeight) ;
                 }
 
-                else if(isRed)
+                else if(isWhite)
                 {
                     g3.setColor(Color.darkGray);
                     g3.fillOval(x + (width - 25) / 4, y + (width - 25) / 8, ovalWidth, ovalHeight);
