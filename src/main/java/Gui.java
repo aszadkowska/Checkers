@@ -1,12 +1,14 @@
-import io.socket.client.IO;
-import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
+
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URISyntaxException;
+import java.util.*;
 
 /**
  * Created by ada on 28.03.17.
@@ -17,26 +19,31 @@ public class Gui
     public static String type_BLANK = "BLANK";
     public static String type_WHITE = "WHITE";
     public static String type_BLACK = "BLACK";
+    public static JFrame frame = new JFrame();
+    public static JPanel backBoard = new JPanel();
+    public static JLabel lbl = new JLabel();
+    public static JButton btn = new JButton("History of moves");
+    public static JList history = new JList();
 
-    public static int width = 70;
-    public static int height = 70;
 
-    Client client;
     public static class Board
     {
-        private JFrame frame = new JFrame();
-        private JPanel backBoard = new JPanel();
-
-
+        public static ArrayList<String> list = new ArrayList<String>();
+        public String a;
         Board()
         {
             int numRows = 8;
             int numCols = 8;
-            frame.setSize(605,605);
+            frame.setSize(605,805);
+            backBoard.setBorder(new EmptyBorder(10,30,20,30));
+/*
             backBoard.setSize(500,600);
+*/
             frame.setTitle("Checkers");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
+
+            //frame.setVisible(true);
+
             backBoard.setVisible(true);
             String str;
             //to copy: str=2,2,1,1,1,1,1,2,2,1,2,1,2,1,2,1,1,2,2,2,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,2,0,0,0,0,2,0,2,0,0,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,1,1
@@ -49,8 +56,7 @@ public class Gui
                     "2,0,2,0,2,0,2,0," +
                     "0,2,0,2,0,2,0,2," ;
             String[] splited = str.split(",");
-
-            String type;
+            list.add(str);
 
 //            for(int r=0; r<numRows; r++) {
 //                for (int c = 0; c < numCols; c++) {
@@ -76,11 +82,10 @@ public class Gui
 //            }
             //frame.add(backBoard);
             repaint(numRows, numCols, splited);
+            moves();
+            setVisible(false);
 
-            //String content = "Ada ada adaa\n";
-            //backBoard.add(new JTextArea(content));
         }
-
         public void repaint(int numRows, int numCols, String[] splited) {
             String type;
             int[][] tab = new int[8][8];
@@ -102,11 +107,9 @@ public class Gui
                 }
             }
 
-
            /* backBoard.repaint();
             frame.add(backBoard);
             frame.repaint();*/
-
             SwingUtilities.updateComponentTreeUI(frame);
             frame.invalidate();
             frame.validate();
@@ -114,91 +117,35 @@ public class Gui
             frame.add(backBoard);
         }
 
-        private class BoardSquare extends JComponent
-        {
-            /**
-             *
-             */
-            private static final long serialVersionUID = 1L;
-            private int x; //x position of the rectangle measured from top left corner
-            private int y; //y position of the rectangle measured from top left corner
+        public void moves(){
+            int count=0;
 
-            private boolean isBlack = false;
-            private boolean isWhite = false;
+            final JComboBox c = new JComboBox();
+            for (int i = 0; i < list.size(); i++)
+                c.addItem("move: " + String.valueOf(count++));
 
-            public BoardSquare(int p, int q, String type)
-            {
-                //this.setBorder(new LineBorder(Color.CYAN, 2));
-                this.setPreferredSize(new Dimension(width, height));
-
-                x = p;
-                y = q;
-
-                if (type.equals(type_BLACK))
-                {
-                    isBlack = true;
-                    isWhite = false;
+            c.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent a) {
+                    String newSelection = (String)c.getSelectedItem();
+                    newSelection.repaint(8,8,splited);
                 }
-                else if (type.equals(type_WHITE))
-                {
-                    isWhite = true;
-                    isBlack = false;
-                }
-                else if (type.equals(type_BLANK))
-                {
-                    isBlack = false;
-                    isWhite = false;
+            });
 
-                }
-
-
-            }
-            public void paintComponent(Graphics g)
-            {
-                String ada;
-                int numRows = 8;
-                int numCols = 8;
-                Graphics2D g2 = (Graphics2D) g;
-                Graphics2D g3 = (Graphics2D) g;
-                Rectangle box = new Rectangle(x,y,width,height);
-                g2.draw(box);
-
-                g2.setPaint(Color.LIGHT_GRAY);
-
-                g2.fill(box);
-                g3.draw(box);
-                g3.fill(box);
-
-                int ovalWidth = width - 25;
-                int ovalHeight = height- 25;
-
-
-                if(isBlack)
-                {
-                    g2.setColor(Color.black);
-                    g2.fillOval(x + (width - 25) / 4, y + (width - 25) / 8, ovalWidth, ovalHeight);
-                    g2.drawOval(x + (width - 25) / 4, y + (width - 25) / 8, ovalWidth, ovalHeight) ;
-
-                    g3.setColor(Color.darkGray);
-                    g3.fillOval(x + (width - 25) / 4, y + (width - 25) / 4, ovalWidth, ovalHeight);
-                    g3.drawOval(x + (width - 25) / 4, y + (width - 25) / 4, ovalWidth, ovalHeight) ;
-                }
-
-                else if(isWhite)
-                {
-                    g3.setColor(Color.darkGray);
-                    g3.fillOval(x + (width - 25) / 4, y + (width - 25) / 8, ovalWidth, ovalHeight);
-                    g3.drawOval(x + (width - 25) / 4, y + (width - 25) / 8, ovalWidth, ovalHeight) ;
-                    g2.setColor(Color.white);
-                    g2.fillOval(x + (width - 25) / 4, y + (width - 25) / 4, ovalWidth, ovalHeight);
-                    g2.drawOval(x + (width - 25) / 4, y + (width - 25) / 4, ovalWidth, ovalHeight);
-
-                }
-
-
-            }
+            backBoard.add(c);
+            SwingUtilities.updateComponentTreeUI(frame);
+            frame.invalidate();
+            frame.validate();
+            frame.repaint();
+            frame.add(backBoard);
         }
 
+        public void add(String move){
+            list.add(move);
+        }
+
+        public void setVisible(boolean visable){
+            frame.setVisible(visable);
+        }
 
     }
 
