@@ -6,24 +6,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.List;
+import java.lang.NullPointerException;
 
 
 public class Client {
 
-
-    public static void main(String [] args) throws URISyntaxException {
-
+    public void openSocket() throws URISyntaxException, NullPointerException{
         final Gui.Board game= new Gui.Board();
-        final mainView.Start st= new mainView.Start();
-        st.setGame(game);
-        st.run();
+        System.out.println(mainView.textContainer);
 
-        final Socket socket = IO.socket("http://192.168.0.102:3000");
+        final Socket socket = IO.socket(mainView.textContainer);
         socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
 
             public void call(Object... args) {
-socket.emit("chat message", "hi");
+                socket.emit("chat message", "hi");
                 //socket.disconnect();
 
             }
@@ -40,12 +36,13 @@ socket.emit("chat message", "hi");
         }).on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
 
             public void call(Object... args) {
-String data = (String) args[0];
+                String data = (String) args[0];
                 System.out.println(data);
 
             }
         });
         socket.connect();
+
     }
 
 }

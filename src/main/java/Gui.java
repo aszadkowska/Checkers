@@ -86,6 +86,9 @@ public class Gui {
 
             c.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent a) {
+<<<<<<< HEAD
+
+=======
                     String newSelection = (String) c.getSelectedItem();
                     String[] index = newSelection.split("move: ");
                     int i = Integer.parseInt(index[1]);
@@ -94,6 +97,7 @@ public class Gui {
 
                     repaint(8, 8, test.split(","));
                     moves();
+>>>>>>> bcb10d6dc60c1b46ec3e84aedf57663720b45b11
                 }
             });
 
@@ -114,4 +118,8 @@ public class Gui {
         }
 
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> bcb10d6dc60c1b46ec3e84aedf57663720b45b11
 }
