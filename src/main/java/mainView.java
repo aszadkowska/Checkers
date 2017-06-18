@@ -18,7 +18,7 @@ public class mainView {
     public static JTextField textField;
     public static Client client;
     public static class Start {
-        Gui gui;
+            Gui gui;
             Gui.Board game = new Gui.Board();
             public void setGame(Gui.Board test){
                 game = test;
@@ -26,6 +26,7 @@ public class mainView {
             public Start(){
                 mainView.client = new Client();
              }
+
 
             public void run() {
                 panel = new JPanel(new GridLayout(0,1,10,10));

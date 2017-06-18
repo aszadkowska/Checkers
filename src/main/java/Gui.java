@@ -40,12 +40,12 @@ public class Gui {
 
 
             backBoard.setVisible(true);
-//            String str = "0,2,0,2,0,2,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0";
-//
-//            String[] splited = str.split(",");
-////            list.add(str);
-//            repaint(numRows, numCols, splited);
-//            moves();
+            String str = "0,2,0,2,0,2,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0";
+
+            String[] splited = str.split(",");
+            list.add(str);
+            repaint(numRows, numCols, splited);
+            moves();
             setVisible(false);
         }
 
@@ -86,9 +86,6 @@ public class Gui {
 
             c.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent a) {
-<<<<<<< HEAD
-
-=======
                     String newSelection = (String) c.getSelectedItem();
                     String[] index = newSelection.split("move: ");
                     int i = Integer.parseInt(index[1]);
@@ -97,7 +94,6 @@ public class Gui {
 
                     repaint(8, 8, test.split(","));
                     moves();
->>>>>>> bcb10d6dc60c1b46ec3e84aedf57663720b45b11
                 }
             });
 
@@ -109,6 +105,17 @@ public class Gui {
             frame.add(backBoard);
         }
 
+        public void showError(String text){
+            JOptionPane.showMessageDialog(frame, text);
+        }
+
+        public String getLastMove(){
+            if (list.isEmpty()) {
+                return "0,2,0,2,0,2,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0";
+            }
+            return list.get(list.size()-1);
+        }
+
         public void add(String move) {
             list.add(move);
         }
@@ -118,8 +125,4 @@ public class Gui {
         }
 
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> bcb10d6dc60c1b46ec3e84aedf57663720b45b11
 }
