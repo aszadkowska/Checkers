@@ -25,6 +25,15 @@ public class Gui {
     public static JList history = new JList();
 
 
+    public static String boardInit = "0,2,0,2,0,2,0,2," +
+                                     "2,0,2,0,2,0,2,0," +
+                                     "0,2,0,2,0,2,0,2," +
+                                     "0,0,0,0,0,0,0,0," +
+                                     "0,0,0,0,0,0,0,0," +
+                                     "1,0,1,0,1,0,1,0," +
+                                     "0,1,0,1,0,1,0,1," +
+                                     "1,0,1,0,1,0,1,0";
+
     public static class Board {
         public static ArrayList<String> list = new ArrayList<String>();
         public String a;
@@ -40,7 +49,7 @@ public class Gui {
 
 
             backBoard.setVisible(true);
-            String str = "0,2,0,2,0,2,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0";
+            String str = boardInit;
 
             String[] splited = str.split(",");
             list.add(str);
@@ -111,7 +120,7 @@ public class Gui {
 
         public String getLastMove(){
             if (list.isEmpty()) {
-                return "0,2,0,2,0,2,0,2,2,0,2,0,2,0,2,0,0,2,0,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0";
+                return boardInit;
             }
             return list.get(list.size()-1);
         }

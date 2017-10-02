@@ -40,7 +40,7 @@ public class mainView {
                 panel.add(label1);
 
                 textField = new JTextField();
-
+                textField.setText("http://127.0.0.1:3000");
 
                 textField.setColumns(20);
                 panel.add(textField);

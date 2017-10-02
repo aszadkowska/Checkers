@@ -26,7 +26,7 @@ public class Client {
                 String lastMove = game.getLastMove();
                 String move = Parser.parse(lastMove,data);
                 System.out.println(move);
-                if (gameEngine.move(move)){
+                if  ((move.length() == 5) && (gameEngine.move(move))){
                     game.repaint(8,8,data.split(","));
                     game.add(data);
                     game.moves();
